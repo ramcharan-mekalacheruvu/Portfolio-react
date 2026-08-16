@@ -1,0 +1,246 @@
+.footer {
+  padding: 55px 0 25px;
+
+  background: #050d17;
+
+  border-top: 1px solid rgba(174, 201, 232, 0.08);
+}
+
+.footer-container {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.footer-main {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    auto;
+
+  gap: 50px;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-logo {
+  width: 42px;
+
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(99, 169, 255, 0.2);
+
+  border-radius: 9px;
+
+  background: rgba(99, 169, 255, 0.06);
+
+  color: #63a9ff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.footer-brand p {
+  margin-top: 18px;
+
+  color: #5f7188;
+
+  font-size: 10px;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-links,
+.footer-social {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+.footer-links > span,
+.footer-social > span {
+  margin-bottom: 5px;
+
+  color: #dce7f5;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+.footer-links button,
+.footer-social a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: none;
+
+  color: #60728a;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links button:hover,
+.footer-social a:hover {
+  color: #63a9ff;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top {
+  width: 40px;
+
+  height: 40px;
+
+  align-self: end;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid rgba(174, 201, 232, 0.1);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #71839b;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  color: #63a9ff;
+
+  border-color: rgba(99, 169, 255, 0.25);
+
+  transform: translateY(-3px);
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 50px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(174, 201, 232, 0.06);
+
+  color: #3f5065;
+
+  font-size: 9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 750px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+  }
+
+  .back-to-top {
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 45px 0 20px;
+  }
+
+  .footer-container {
+    width: calc(100% - 32px);
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .back-to-top {
+    top: 0;
+
+    right: 0;
+  }
+
+  .footer-bottom {
+    display: block;
+
+    line-height: 2;
+  }
+}
