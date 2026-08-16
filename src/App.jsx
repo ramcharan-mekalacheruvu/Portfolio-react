@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -18,9 +19,9 @@ function App() {
 
         <Projects />
 
-        {/* Temporary sections */}
-        <section id="education"></section>
+        <Education />
 
+        {/* Temporary Contact section */}
         <section id="contact"></section>
       </main>
     </>

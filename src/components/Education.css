@@ -1,0 +1,341 @@
+.education-section {
+  padding: 120px 0;
+
+  background: #071321;
+
+  border-top: 1px solid rgba(174, 201, 232, 0.06);
+}
+
+.education-container {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.education-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.education-heading h2 {
+  margin-top: 18px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+  font-weight: 600;
+}
+
+.education-heading h2 em {
+  font-style: normal;
+
+  color: #63a9ff;
+}
+
+.education-heading > p {
+  max-width: 420px;
+
+  color: #8999ae;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.education-timeline {
+  margin-top: 60px;
+}
+
+.education-item {
+  display: grid;
+
+  grid-template-columns: 55px 60px 1fr;
+
+  gap: 20px;
+
+  min-height: 210px;
+}
+
+/* NUMBER */
+
+.education-number {
+  padding-top: 8px;
+
+  color: #45576d;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   TIMELINE LINE
+========================= */
+
+.education-line {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.education-line::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50px;
+
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(174, 201, 232, 0.1);
+}
+
+.education-item:last-child
+.education-line::after {
+  display: none;
+}
+
+.education-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #63a9ff;
+
+  background: #071321;
+
+  border: 1px solid rgba(99, 169, 255, 0.25);
+
+  box-shadow:
+    0 0 0 7px rgba(99, 169, 255, 0.03);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.education-content {
+  margin-bottom: 35px;
+
+  padding: 26px;
+
+  border: 1px solid rgba(174, 201, 232, 0.1);
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.education-content:hover {
+  transform: translateX(4px);
+
+  border-color: rgba(99, 169, 255, 0.22);
+}
+
+/* TOP */
+
+.education-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.education-period {
+  color: #63a9ff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.education-level {
+  color: #5f7188;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.3px;
+}
+
+/* TITLE */
+
+.education-content h3 {
+  margin-top: 16px;
+
+  color: #edf5ff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+.education-content h4 {
+  margin-top: 4px;
+
+  color: #8999ae;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.education-institution {
+  margin-top: 18px;
+
+  color: #dce7f5;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.education-location {
+  margin-top: 5px;
+
+  color: #60728a;
+
+  font-size: 10px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.education-details {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.education-details span {
+  padding: 7px 10px;
+
+  border-radius: 6px;
+
+  color: #71839b;
+
+  background: rgba(99, 169, 255, 0.04);
+
+  border: 1px solid rgba(99, 169, 255, 0.08);
+
+  font-size: 9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .education-heading {
+    display: block;
+  }
+
+  .education-heading > p {
+    margin-top: 20px;
+  }
+
+  .education-item {
+    grid-template-columns: 40px 48px 1fr;
+
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-section {
+    padding: 90px 0;
+  }
+
+  .education-container {
+    width: calc(100% - 32px);
+  }
+
+  .education-timeline {
+    margin-top: 40px;
+  }
+
+  .education-item {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    min-height: auto;
+
+    margin-bottom: 25px;
+  }
+
+  .education-number {
+    padding: 0;
+  }
+
+  .education-line {
+    display: none;
+  }
+
+  .education-content {
+    margin-bottom: 0;
+
+    padding: 22px;
+  }
+
+  .education-top {
+    display: block;
+  }
+
+  .education-level {
+    display: block;
+
+    margin-top: 8px;
+  }
+}

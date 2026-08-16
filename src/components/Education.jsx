@@ -1,98 +1,136 @@
-import { GraduationCap, Award } from "lucide-react";
+import {
+  GraduationCap,
+  School,
+  BookOpen,
+} from "lucide-react";
+
+import "./Education.css";
 
 const education = [
   {
+    number: "01",
     icon: GraduationCap,
-    period: "SEP 2023 — MAY 2027",
-    degree:
-      "Bachelor of Technology (B.Tech) — Computer Science and Engineering (Artificial Intelligence)",
+    period: "Sep 2023 — May 2027",
+    level: "Bachelor of Technology",
+    title: "Computer Science and Engineering",
+    specialization: "Artificial Intelligence",
     institution:
       "Annamacharya Institute of Technology and Sciences",
     location: "Rajampeta, Andhra Pradesh, India",
-    result: "CGPA: 9.38 / 10 (Current)",
     details: [
-      "Branch: Computer Science and Engineering (Artificial Intelligence)",
       "Currently pursuing 4th year",
+      "Aggregate CGPA: 9.38 / 10",
     ],
   },
   {
-    icon: Award,
-    period: "JUL 2021 — MAY 2023",
-    degree: "Intermediate — MPC",
+    number: "02",
+    icon: School,
+    period: "Jul 2021 — May 2023",
+    level: "Intermediate",
+    title: "MPC",
+    specialization: "Mathematics, Physics & Chemistry",
     institution: "Space Junior College",
     location: "Anantapur, Andhra Pradesh, India",
-    result: "Percentage: 96%",
     details: [
-      "Stream: Mathematics, Physics and Chemistry",
+      "Aggregate Percentage: 96%",
     ],
   },
   {
-    icon: Award,
-    period: "JUN 2020 — MAR 2021",
-    degree: "Secondary School Certificate (SSC)",
+    number: "03",
+    icon: BookOpen,
+    period: "Jun 2020 — Mar 2021",
+    level: "High School",
+    title: "Secondary School Certificate",
+    specialization: "SSC",
     institution: "Harish EM High School",
     location: "Anantapur, Andhra Pradesh, India",
-    result: "Percentage: 96%",
     details: [
-      "Board: SSC",
+      "Aggregate Percentage: 96%",
     ],
   },
 ];
 
 function Education() {
   return (
-    <section id="education" className="section dark">
-      <div className="section-label">04 / EDUCATION</div>
+    <section className="education-section" id="education">
+      <div className="education-container">
 
-      <div className="section-head">
-        <div>
-          <h2>
-            My <em>education.</em>
-          </h2>
+        <div className="education-heading">
+          <div>
+            <span className="section-label">
+              04 / EDUCATION
+            </span>
+
+            <h2>
+              My academic <em>journey.</em>
+            </h2>
+          </div>
 
           <p>
-            A strong academic foundation combined with practical development
-            and AI/ML projects.
+            A strong academic foundation in computer science,
+            artificial intelligence, mathematics and science.
           </p>
         </div>
-      </div>
 
-      <div className="education-timeline">
-        {education.map((item) => {
-          const Icon = item.icon;
+        <div className="education-timeline">
 
-          return (
-            <article className="education-item" key={item.degree}>
-              <div className="education-icon">
-                <Icon size={22} />
-              </div>
+          {education.map((item) => {
+            const Icon = item.icon;
 
-              <div className="education-content">
-                <span className="education-period">
-                  {item.period}
-                </span>
-
-                <h3>{item.degree}</h3>
-
-                <h4>{item.institution}</h4>
-
-                <p className="education-location">
-                  {item.location}
-                </p>
-
-                <div className="education-result">
-                  {item.result}
+            return (
+              <article
+                className="education-item"
+                key={item.number}
+              >
+                <div className="education-number">
+                  {item.number}
                 </div>
 
-                <ul>
-                  {item.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          );
-        })}
+                <div className="education-line">
+                  <div className="education-icon">
+                    <Icon size={20} />
+                  </div>
+                </div>
+
+                <div className="education-content">
+
+                  <div className="education-top">
+                    <span className="education-period">
+                      {item.period}
+                    </span>
+
+                    <span className="education-level">
+                      {item.level}
+                    </span>
+                  </div>
+
+                  <h3>{item.title}</h3>
+
+                  <h4>{item.specialization}</h4>
+
+                  <p className="education-institution">
+                    {item.institution}
+                  </p>
+
+                  <p className="education-location">
+                    {item.location}
+                  </p>
+
+                  <div className="education-details">
+                    {item.details.map((detail) => (
+                      <span key={detail}>
+                        {detail}
+                      </span>
+                    ))}
+                  </div>
+
+                </div>
+              </article>
+            );
+          })}
+
+        </div>
+
       </div>
     </section>
   );
