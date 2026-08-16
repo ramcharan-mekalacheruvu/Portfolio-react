@@ -1,0 +1,329 @@
+.about-section {
+  padding: 120px 0;
+
+  background: #06101c;
+
+  border-top: 1px solid rgba(174, 201, 232, 0.06);
+}
+
+.about-container {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.about-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.section-label {
+  display: block;
+
+  color: #71839b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.about-heading h2 {
+  margin-top: 18px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+  font-weight: 600;
+}
+
+.about-heading h2 em {
+  font-style: normal;
+
+  background: linear-gradient(
+    90deg,
+    #63a9ff,
+    #8d7cff
+  );
+
+  color: transparent;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+}
+
+.about-heading > p {
+  max-width: 410px;
+
+  color: #8999ae;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.about-main {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 90px;
+
+  margin-top: 55px;
+}
+
+/* TEXT */
+
+.about-text p {
+  color: #8999ae;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+}
+
+.about-text .about-intro {
+  color: #dce7f5;
+
+  font-size: 21px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.about-profile {
+  align-self: start;
+
+  padding: 25px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(174, 201, 232, 0.12);
+
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.profile-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(174, 201, 232, 0.1);
+}
+
+.profile-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: rgba(99, 169, 255, 0.08);
+
+  color: #63a9ff;
+}
+
+.profile-header strong {
+  display: block;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 15px;
+}
+
+.profile-header span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #71839b;
+
+  font-size: 9px;
+}
+
+.profile-details {
+  margin-top: 5px;
+}
+
+.profile-details div {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid rgba(174, 201, 232, 0.08);
+}
+
+.profile-details div:last-child {
+  border-bottom: none;
+}
+
+.profile-details span {
+  color: #60728a;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.profile-details strong {
+  color: #dce7f5;
+
+  font-size: 10px;
+
+  text-align: right;
+}
+
+/* =========================
+   HIGHLIGHTS
+========================= */
+
+.about-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+
+  margin-top: 65px;
+}
+
+.about-highlight {
+  display: flex;
+
+  gap: 15px;
+
+  padding: 23px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(174, 201, 232, 0.1);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.about-highlight:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(99, 169, 255, 0.2);
+}
+
+.highlight-icon {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  background: rgba(99, 169, 255, 0.08);
+
+  color: #63a9ff;
+}
+
+.about-highlight h3 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 14px;
+
+  margin-bottom: 8px;
+}
+
+.about-highlight p {
+  color: #71839b;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .about-main {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 90px 0;
+  }
+
+  .about-container {
+    width: calc(100% - 32px);
+  }
+
+  .about-heading {
+    display: block;
+  }
+
+  .about-heading > p {
+    margin-top: 18px;
+  }
+
+  .about-main {
+    margin-top: 40px;
+  }
+
+  .about-text .about-intro {
+    font-size: 18px;
+  }
+}
