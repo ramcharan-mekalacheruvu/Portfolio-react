@@ -36,6 +36,10 @@ function Navbar() {
       label: "Education",
       id: "education",
     },
+    {
+      label: "Contact",
+      id: "contact",
+    },
   ];
 
   return (
@@ -47,11 +51,12 @@ function Navbar() {
         <button
           className="logo"
           onClick={() => scrollToSection("home")}
+          aria-label="Go to home"
         >
           <span>RC</span>
         </button>
 
-        {/* DESKTOP NAVIGATION */}
+        {/* NAVIGATION */}
 
         <nav
           className={`nav-links ${
@@ -68,6 +73,8 @@ function Navbar() {
               {item.label}
             </button>
           ))}
+
+          {/* HIRE ME */}
 
           <button
             className="nav-hire"
@@ -88,6 +95,7 @@ function Navbar() {
             setMenuOpen(!menuOpen)
           }
           aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? (
             <X size={23} />
