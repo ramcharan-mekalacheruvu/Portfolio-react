@@ -118,16 +118,26 @@ function Hero() {
 
           <div className="hero-glow"></div>
 
+          {/* PROFILE IMAGE */}
+
           <div className="profile-circle">
 
-            <div className="profile-initials">
-              RC
+            <img
+              src="/images/Profile1.jpeg"
+              alt="Ram Charan"
+              className="profile-image"
+            />
+
+            <div className="profile-overlay"></div>
+
+            <div className="profile-label">
+              <span>SOFTWARE</span>
+              <span>DEVELOPER</span>
             </div>
 
-            <span>SOFTWARE</span>
-            <span>DEVELOPER</span>
-
           </div>
+
+          {/* FLOATING CARDS */}
 
           <div className="floating-card card-one">
             <strong>React</strong>
@@ -147,6 +157,8 @@ function Hero() {
         </div>
 
       </div>
+
+      {/* SCROLL */}
 
       <button
         className="hero-scroll"

@@ -6,12 +6,15 @@
   position: relative;
 
   display: flex;
+
   align-items: center;
 
   overflow: hidden;
 }
 
-/* BACKGROUND GLOW */
+/* =========================
+   BACKGROUND GLOW
+========================= */
 
 .hero::before {
   content: "";
@@ -55,15 +58,19 @@
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 }
 
-/* AVAILABILITY */
+/* =========================
+   AVAILABILITY
+========================= */
 
 .availability {
   width: fit-content;
 
   display: flex;
+
   align-items: center;
 
   gap: 8px;
@@ -83,6 +90,7 @@
 
 .availability span {
   width: 6px;
+
   height: 6px;
 
   border-radius: 50%;
@@ -92,7 +100,9 @@
   box-shadow: 0 0 12px #71e2ae;
 }
 
-/* LABEL */
+/* =========================
+   LABEL
+========================= */
 
 .hero-label {
   margin-top: 25px;
@@ -108,7 +118,9 @@
   text-transform: uppercase;
 }
 
-/* MAIN HEADING */
+/* =========================
+   MAIN HEADING
+========================= */
 
 .hero h1 {
   margin-top: 18px;
@@ -138,7 +150,9 @@
   -webkit-background-clip: text;
 }
 
-/* SUB HEADING */
+/* =========================
+   SUB HEADING
+========================= */
 
 .hero h2 {
   margin-top: 25px;
@@ -172,7 +186,9 @@
   -webkit-background-clip: text;
 }
 
-/* DESCRIPTION */
+/* =========================
+   DESCRIPTION
+========================= */
 
 .hero-description {
   max-width: 650px;
@@ -282,6 +298,8 @@
 
   font-size: 11px;
 
+  text-decoration: none;
+
   transition: color 0.2s ease;
 }
 
@@ -303,7 +321,9 @@
   place-items: center;
 }
 
-/* ORBITS */
+/* =========================
+   ORBITS
+========================= */
 
 .hero-orbit {
   position: absolute;
@@ -311,20 +331,25 @@
   border-radius: 50%;
 
   border: 1px solid rgba(99, 169, 255, 0.14);
+
+  pointer-events: none;
 }
 
 .orbit-one {
   width: 320px;
+
   height: 320px;
 }
 
 .orbit-two {
   width: 420px;
+
   height: 420px;
 
   border-style: dashed;
 
-  animation: rotateOrbit 30s linear infinite;
+  animation:
+    rotateOrbit 30s linear infinite;
 }
 
 @keyframes rotateOrbit {
@@ -337,12 +362,15 @@
   }
 }
 
-/* GLOW */
+/* =========================
+   GLOW
+========================= */
 
 .hero-glow {
   position: absolute;
 
   width: 230px;
+
   height: 230px;
 
   border-radius: 50%;
@@ -352,72 +380,124 @@
   opacity: 0.13;
 
   filter: blur(70px);
+
+  pointer-events: none;
 }
 
-/* PROFILE */
+/* =========================
+   PROFILE IMAGE
+========================= */
 
 .profile-circle {
   position: relative;
 
-  width: 190px;
-  height: 190px;
+  width: 290px;
+
+  height: 290px;
 
   border-radius: 50%;
 
-  display: flex;
+  overflow: hidden;
 
-  flex-direction: column;
+  display: flex;
 
   align-items: center;
 
   justify-content: center;
 
-  background:
-    radial-gradient(
-      circle at 35% 25%,
-      #244568,
-      #091521 70%
-    );
+  background: #091521;
 
-  border: 1px solid rgba(99, 169, 255, 0.3);
+  border: 1px solid rgba(99, 169, 255, 0.35);
 
   box-shadow:
-    0 0 80px rgba(73, 132, 255, 0.12),
+    0 0 80px rgba(73, 132, 255, 0.14),
+    0 0 0 10px rgba(99, 169, 255, 0.025),
     inset 0 0 40px rgba(99, 169, 255, 0.04);
 
   z-index: 2;
 }
 
-.profile-initials {
+/* ACTUAL PHOTO */
+
+.profile-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  filter: saturate(0.92);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.profile-circle:hover .profile-image {
+  transform: scale(1.05);
+
+  filter: saturate(1);
+}
+
+/* DARK GRADIENT OVER PHOTO */
+
+.profile-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3, 10, 18, 0.02) 35%,
+      rgba(3, 10, 18, 0.2) 55%,
+      rgba(3, 10, 18, 0.88) 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* PHOTO LABEL */
+
+.profile-label {
+  position: absolute;
+
+  left: 24px;
+
+  bottom: 23px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  z-index: 2;
+}
+
+.profile-label span {
+  color: #ffffff;
+
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 58px;
+  font-size: 8px;
 
   font-weight: 700;
 
-  letter-spacing: -5px;
-
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #63a9ff
-  );
-
-  color: transparent;
-
-  background-clip: text;
-
-  -webkit-background-clip: text;
-}
-
-.profile-circle span {
-  font-size: 7px;
-
   letter-spacing: 2px;
 
-  color: #7c8ea6;
+  line-height: 1.4;
 
-  line-height: 1.5;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* =========================
@@ -449,12 +529,24 @@
   flex-direction: column;
 
   gap: 3px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(99, 169, 255, 0.25);
 }
 
 .floating-card strong {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 12px;
+
+  color: #edf5ff;
 }
 
 .floating-card small {
@@ -463,18 +555,23 @@
   font-size: 9px;
 }
 
+/* CARD POSITIONS */
+
 .card-one {
   top: 70px;
+
   right: 10px;
 }
 
 .card-two {
   bottom: 75px;
+
   left: 0;
 }
 
 .card-three {
   bottom: 40px;
+
   right: 35px;
 }
 
@@ -524,6 +621,7 @@
 @media (max-width: 800px) {
   .hero {
     padding-top: 130px;
+
     padding-bottom: 100px;
   }
 
@@ -538,9 +636,15 @@
   }
 
   .hero-visual {
-    height: 380px;
+    height: 400px;
 
-    transform: scale(0.8);
+    transform: scale(0.82);
+  }
+
+  .profile-circle {
+    width: 280px;
+
+    height: 280px;
   }
 
   .hero-scroll {
@@ -576,8 +680,34 @@
   }
 
   .hero-visual {
-    margin-top: -30px;
+    height: 350px;
+
+    margin-top: -20px;
 
     transform: scale(0.68);
+  }
+
+  .profile-circle {
+    width: 280px;
+
+    height: 280px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .hero-visual {
+    transform: scale(0.58);
+
+    margin-top: -35px;
+  }
+
+  .profile-circle {
+    width: 270px;
+
+    height: 270px;
   }
 }
