@@ -1,166 +1,165 @@
-import {
-  ShoppingCart,
-  MessageCircle,
-  BrainCircuit,
-  FileText,
-  ArrowUpRight,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import "./Projects.css";
 
-const projects = [
-  {
-    number: "01",
-    icon: ShoppingCart,
-    title: "RiceStore",
-    subtitle: "E-commerce Platform",
-    description:
-      "A full-stack e-commerce platform designed for selling rice and related products online. Includes product browsing, cart management and an organized shopping experience.",
-    technologies: [
-      "React",
-      "Spring Boot",
-      "MySQL",
-      "REST API",
-    ],
-    type: "Full Stack",
-  },
-  {
-    number: "02",
-    icon: MessageCircle,
-    title: "WhatsApp Ordering System",
-    subtitle: "Online Ordering Platform",
-    description:
-      "A web-based ordering system that allows customers to browse products, select quantities and place orders through WhatsApp for a simple and convenient purchasing workflow.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "WhatsApp API",
-    ],
-    type: "Web Application",
-  },
-  {
-    number: "03",
-    icon: BrainCircuit,
-    title: "AI Resume Analyzer",
-    subtitle: "Machine Learning Application",
-    description:
-      "An AI-powered resume analysis application that extracts skills from uploaded resumes and identifies suitable job roles using NLP, TF-IDF and machine learning techniques.",
-    technologies: [
-      "Python",
-      "Django",
-      "NLP",
-      "Scikit-learn",
-      "TF-IDF",
-    ],
-    type: "AI / ML",
-  },
-  {
-    number: "04",
-    icon: FileText,
-    title: "ClassNotesHub",
-    subtitle: "PDF Sharing Platform",
-    description:
-      "A platform for students to upload, organize and share academic PDF notes, making study materials easier to access and distribute.",
-    technologies: [
-      "PHP",
-      "MySQL",
-      "HTML",
-      "CSS",
-    ],
-    type: "Web Application",
-  },
-];
-
 function Projects() {
+  const projects = [
+    {
+      number: "01",
+      title: "Rice Store",
+      category: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce platform developed for a real-world rice business, allowing customers to explore products and place orders through a simple online interface.",
+      technologies: [
+        "Django",
+        "Python",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+      ],
+      github:
+        "https://github.com/ramcharan-mekalacheruvu/rice-store.git",
+      demo:
+        "https://rice-store-one.vercel.app/",
+    },
+
+    {
+      number: "02",
+      title: "AI Resume Analyzer",
+      category: "AI / Machine Learning",
+      description:
+        "An AI-powered resume analysis application that extracts skills from resumes and compares them with job requirements to recommend relevant career opportunities.",
+      technologies: [
+        "Python",
+        "Django",
+        "Machine Learning",
+        "TF-IDF",
+        "scikit-learn",
+      ],
+      github:
+        "https://github.com/ramcharan-mekalacheruvu/Resume-Analyzer.git",
+      demo:
+        "https://resume-analyzer-ap3x.onrender.com/",
+    },
+
+    {
+      number: "03",
+      title: "ClassNotesHub",
+      category: "PDF Sharing Platform",
+      description:
+        "A web platform for students to upload, share and access academic notes and PDF resources in one centralized location.",
+      technologies: [
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
+      github:
+        "https://github.com/ramcharan-mekalacheruvu/Classnoteshub.git",
+      demo:
+        "https://classnoteshub.infinityfreeapp.com/?i=1",
+    },
+  ];
+
   return (
     <section className="projects-section" id="projects">
       <div className="projects-container">
 
-        {/* HEADING */}
+        {/* SECTION HEADER */}
 
-        <div className="projects-heading">
+        <div className="projects-header">
           <div>
             <span className="section-label">
               03 / PROJECTS
             </span>
 
             <h2>
-              Things I've <em>built.</em>
+              Things I've
+              <br />
+              <em>built.</em>
             </h2>
           </div>
 
           <p>
-            A selection of academic and personal projects
-            where I applied software development, AI and
-            problem-solving skills.
+            A selection of projects where I've applied
+            software development, full-stack development
+            and AI/ML concepts to build practical
+            solutions.
           </p>
         </div>
 
         {/* PROJECT LIST */}
 
         <div className="projects-list">
-          {projects.map((project) => {
-            const Icon = project.icon;
+          {projects.map((project) => (
+            <article
+              className="project-card"
+              key={project.number}
+            >
+              {/* PROJECT NUMBER */}
 
-            return (
-              <article
-                className="project-card"
-                key={project.title}
-              >
-                {/* NUMBER */}
+              <div className="project-number">
+                {project.number}
+              </div>
 
-                <div className="project-number">
-                  {project.number}
-                </div>
+              {/* PROJECT CONTENT */}
 
-                {/* ICON */}
+              <div className="project-content">
+                <span className="project-category">
+                  {project.category}
+                </span>
 
-                <div className="project-icon">
-                  <Icon size={22} />
-                </div>
+                <h3>
+                  {project.title}
+                </h3>
 
-                {/* CONTENT */}
+                <p>
+                  {project.description}
+                </p>
 
-                <div className="project-content">
+                {/* TECHNOLOGIES */}
 
-                  <div className="project-title-row">
-                    <div>
-                      <span className="project-type">
-                        {project.type}
+                <div className="project-tech">
+                  {project.technologies.map(
+                    (technology) => (
+                      <span key={technology}>
+                        {technology}
                       </span>
-
-                      <h3>{project.title}</h3>
-
-                      <h4>{project.subtitle}</h4>
-                    </div>
-
-                    <button
-                      className="project-arrow"
-                      aria-label={`View ${project.title}`}
-                    >
-                      <ArrowUpRight size={19} />
-                    </button>
-                  </div>
-
-                  <p className="project-description">
-                    {project.description}
-                  </p>
-
-                  <div className="project-technologies">
-                    {project.technologies.map(
-                      (technology) => (
-                        <span key={technology}>
-                          {technology}
-                        </span>
-                      )
-                    )}
-                  </div>
-
+                    )
+                  )}
                 </div>
-              </article>
-            );
-          })}
+              </div>
+
+              {/* PROJECT LINKS */}
+
+              <div className="project-links">
+
+                {project.github !== "#" && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
+
+                {project.demo !== "#" && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
+
+              </div>
+            </article>
+          ))}
         </div>
 
       </div>

@@ -13,7 +13,7 @@ const skillGroups = [
   {
     icon: Code2,
     title: "Programming Languages",
-    skills: ["Java", "Python", "JavaScript", "C", "SQL"],
+    skills: ["Python", "JavaScript", "SQL", "Java",],
   },
   {
     icon: Monitor,
@@ -25,15 +25,13 @@ const skillGroups = [
     title: "Backend Development",
     skills: [
       "Django",
-      "Spring Boot",
-      "JDBC",
       "REST APIs",
     ],
   },
   {
     icon: Database,
     title: "Databases",
-    skills: ["MySQL", "MongoDB", "MongoDB Atlas"],
+    skills: ["MySQL", "PostgreSQL", ],
   },
   {
     icon: BrainCircuit,
@@ -44,7 +42,7 @@ const skillGroups = [
       "Pandas",
       "NumPy",
       "Scikit-learn",
-      "TensorFlow",
+      
     ],
   },
   {
@@ -54,7 +52,7 @@ const skillGroups = [
       "Git",
       "GitHub",
       "VS Code",
-      "IntelliJ IDEA",
+      
       "Postman",
     ],
   },
